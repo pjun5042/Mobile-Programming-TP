@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_text"
+        android:text="사용자 정보 : "
+        android:textSize="10pt"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:padding="1pt"
+        android:layout_below="@id/info_text"
+        android:id="@+id/edittext01"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수면시간설정"
+        android:onClick="onClick"
+        android:textSize="10pt"
+        android:id="@+id/sleep"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위기알림시간"
+        android:onClick="onClick"
+        android:textSize="10pt"
+        android:id="@+id/countdown"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나가기"
+        android:onClick="onClick"
+        android:textSize="10pt"
+        android:id="@+id/Exit"/>
+
+</LinearLayout>
