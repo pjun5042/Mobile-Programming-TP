@@ -28,7 +28,8 @@
         android:id="@+id/info_number"
         android:layout_below="@id/edittext01"
         android:textSize="10pt"
-        android:text="사용자 정보 : " />
+        android:inputType="number"
+        android:text="보호자 번호 : " />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="20pt"

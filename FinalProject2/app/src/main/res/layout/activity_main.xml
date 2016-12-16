@@ -16,39 +16,63 @@
         android:textSize="10pt"
         android:id="@+id/sleeptime"/>
     <TextView
+        android:layout_below="@id/sleeptime"
         android:id="@+id/sleepValue"
-        android:layout_toEndOf="@+id/sleeptime"
-        android:layout_width="10pt"
-        android:layout_height="10pt" />
+        android:layout_width="match_parent"
+        android:layout_height="20pt" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/counttime"
-        android:layout_toEndOf="@id/sleeptime"
         android:text="입력한 보호시간 : "
         android:textSize="10pt"
-        android:layout_below="@+id/sleeptime"
-        android:layout_alignParentStart="true" />
-    <TextView
-        android:id="@+id/countValue"
-        android:layout_width="10pt"
-        android:layout_height="10pt"
-        android:layout_below="@+id/sleeptime"
-        android:layout_toEndOf="@+id/counttime" />
+        android:layout_below="@+id/sleepValue" />
 
     <TextView
-        android:layout_below="@id/counttime"
+        android:id="@+id/countValue"
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:layout_below="@id/counttime" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="보호자 : "
         android:textSize="10pt"
-        android:id="@+id/saver"/>
+        android:id="@+id/saver"
+        android:layout_below="@+id/countValue" />
+
     <TextView
-        android:layout_below="@+id/counttime"
         android:id="@+id/inputSaver"
-        android:layout_toEndOf="@+id/saver"
-        android:layout_width="10pt"
-        android:layout_height="10pt" />
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:layout_below="@+id/saver" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="보호자 번호 : "
+        android:textSize="10pt"
+        android:id="@+id/number"
+        android:layout_below="@id/inputSaver"/>
+
+    <TextView
+        android:id="@+id/saverNumber"
+        android:layout_width="match_parent"
+        android:layout_height="20pt"
+        android:layout_below="@id/number" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="보호자정보입력"
+        android:onClick="onClick"
+        android:id="@+id/saverinfo"
+        android:layout_below="@+id/saverNumber"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="66dp"
+        android:layout_marginTop="35dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -59,18 +83,6 @@
         android:layout_alignBaseline="@+id/saverinfo"
         android:layout_alignBottom="@+id/saverinfo"
         android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="보호자정보입력"
-        android:onClick="onClick"
-        android:id="@+id/saverinfo"
-        android:layout_below="@+id/saver"
-        android:layout_toEndOf="@+id/counttime"
-        android:layout_marginTop="25dp" />
-
-
 
 
 </RelativeLayout>

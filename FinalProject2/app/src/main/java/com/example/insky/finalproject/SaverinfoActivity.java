@@ -37,23 +37,26 @@ public class SaverinfoActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.submit: {
                 if (et1.getText().toString().equals("") || et1.getText().toString().trim().equals("")) {
-                    Toast.makeText(this, "보호자를 입력해주세요", Toast.LENGTH_SHORT);
+                    Toast.makeText(this, "보호자를 입력해주세요", Toast.LENGTH_SHORT).show();
                 } else if (et2.getText().toString().equals("") || et2.getText().toString().trim().equals("")) {
-                    Toast.makeText(this, "보호자의 번호를 입력해주세요", Toast.LENGTH_SHORT);
+                    Toast.makeText(this, "보호자의 번호를 입력해주세요", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent();
                     String number = et2.getText().toString();
                     save(number);
-                    intent.putExtra("Saver", et1.getText().toString());
+                    intent.putExtra("saver", et1.getText().toString());
                     intent.putExtra("number", et2.getText().toString());
                     setResult(RESULT_OK, intent);
                     Toast.makeText(this, "저장하였습니다", Toast.LENGTH_SHORT).show();
                     et1.setText(null); // 버튼을 눌렀을 때 제목 & 내용을 초기화시킨다
                     et2.setText(null);
+                    Log.d("check", "대화상자가 뜨면 안됌");
                 }
+                break;
             }
             case R.id.cancel: {
                 showDialog(DIALOG_YES_NO_MESSAGE);
+                break;
             }
         }
     }
@@ -64,7 +67,7 @@ public class SaverinfoActivity extends AppCompatActivity {
             case DIALOG_YES_NO_MESSAGE:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("종료 확인 대화 상자")
-                        .setMessage("입력을 취소하시겠습니까?")
+                        .setMessage("나가시겠습니까?")
                         .setPositiveButton("아니오", new DialogInterface.OnClickListener() { // 원래는 아니오 예 순으로 뜨지만
                             @Override
 // 우리 눈에 보기 편하게 만들고 싶어서 PositiveButton에 아니오를 넣고 Negative에 예를 넣었다.

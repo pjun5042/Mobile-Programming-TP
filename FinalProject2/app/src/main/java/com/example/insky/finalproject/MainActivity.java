@@ -15,15 +15,19 @@ public class MainActivity extends AppCompatActivity {
     public String SleepTime;
     public String CountTime;
     public String Relation;
+    public String Number;
+    public static long hourToMinute;
     TextView Saver_text;
     TextView SleepTime_text;
     TextView CountTime_text;
+    TextView Saver_number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Saver_text = (TextView)findViewById(R.id.saver);
+        Saver_text = (TextView)findViewById(R.id.inputSaver);
+        Saver_number = (TextView)findViewById(R.id.saverNumber);
         SleepTime_text = (TextView)findViewById(R.id.sleepValue);
         CountTime_text = (TextView)findViewById(R.id.countValue);
     }
@@ -34,12 +38,15 @@ public class MainActivity extends AppCompatActivity {
                 SleepTime = data.getStringExtra("SleepTime");
                 SleepTime_text.setText(SleepTime);
                 CountTime = data.getStringExtra("CountTime");
-                CountTime_text.setText(CountTime);
+                CountTime_text.setText(String.valueOf(hourToMinute));
+
 
             }
             else if ( requestCode == saver) {
-                Relation = data.getStringExtra("Saver");
+                Relation = data.getStringExtra("saver");
                 Saver_text.setText(Relation);
+                Number = data.getStringExtra("number");
+                Saver_number.setText(Number);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

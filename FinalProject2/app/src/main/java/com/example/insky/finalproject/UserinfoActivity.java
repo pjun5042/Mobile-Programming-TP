@@ -21,6 +21,7 @@ public class UserinfoActivity extends AppCompatActivity {
     final int DIALOG_SLEEP = 1;
     final int DIALOG_COUNTTIME = 2;
     private static final int DIALOG_YES_NO_MESSAGE = 3; // 대화상자박스 실행을 위한 변수 선언
+    public static long hourToMinute;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +86,14 @@ public class UserinfoActivity extends AppCompatActivity {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                long hourToMinute = hourOfDay * 60 + minute;
+                                hourToMinute = hourOfDay * 60 + minute;
                                 String CountTime = Long.toString(hourToMinute);
                                 Intent in = new Intent();
                                 in.putExtra("CountTime", CountTime);
                                 setResult(RESULT_OK, in);
+                                Log.d("hourToMinute", CountTime);
                             }
-                        }, 0,0,false);
+                        }, 0,0,true);
                 return count_tpd;
 
             case DIALOG_YES_NO_MESSAGE :
